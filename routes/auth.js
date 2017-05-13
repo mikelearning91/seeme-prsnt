@@ -67,4 +67,4 @@ module.exports = function(app, passport) {
             return next();
         res.redirect('/signin');
     }
-}
+};

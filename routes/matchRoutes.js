@@ -4,7 +4,7 @@ var db = require('../models');
 
 module.exports = function(app) {
 
-    app.get('/mymatches', isLoggedIn, matchHelper.mymatches)
+    app.get('/mymatches', isLoggedIn, matchHelper.mymatches);
 
     app.get('/api/matches', matchHelper.matchindex);
 

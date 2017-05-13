@@ -97,7 +97,7 @@ function toggleRecording() {
 
     if (document.getElementById("record").innerHTML === '<i class="material-icons">camera</i>') {
         startRecording();
-        setTimeout(function() { recordingTimeLimit() }, 10000)
+        setTimeout(function() { recordingTimeLimit(); }, 10000);
     } else {
         stopRecording();
         document.getElementById("record").innerHTML = '<i class="material-icons">camera</i>';
@@ -115,7 +115,7 @@ function recordingTimeLimit() {
     document.getElementById("record").classList.remove('btn-danger');
     playButton.disabled = false;
     downloadButton.disabled = false;
-};
+}
 
 function startRecording() {
     recordedBlobs = [];
@@ -211,6 +211,7 @@ function download() {
 
 
             profileVideoLink = url;
+            $("#page-cover").fadeIn(300);
 
             setTimeout(function() {
                 $.ajax({
@@ -223,9 +224,11 @@ function download() {
                         id: currentUserId
                     },
                     success: function(data) {
+                        $("#page-cover").fadeOut(300);
+                        $("#vid-succ-s").fadeIn(200).delay(800).fadeOut();
                         //show content
                         console.log('Success!');
-                        console.log(data)
+                        // console.log(data);
                     },
                     error: function(jqXHR, textStatus, err) {
 

@@ -51,14 +51,14 @@ module.exports = function() {
 
     Match.prototype.rangeCheck = function() {
 
-        var lat1 = this.userLocations[0][0]
-        var lon1 = this.userLocations[0][1]
-            //loop through the entire matchlist and get the lat and lon of each
-            //match and do the comparison.
+        var lat1 = this.userLocations[0][0];
+        var lon1 = this.userLocations[0][1];
+        //loop through the entire matchlist and get the lat and lon of each
+        //match and do the comparison.
         for (var i = 0; i < matchList.length; i++) {
 
-            var lat2 = matchList[i].userLocations[0][0]
-            var lon2 = matchList[i].userLocations[0][1]
+            var lat2 = matchList[i].userLocations[0][0];
+            var lon2 = matchList[i].userLocations[0][1];
             var R = 6371e3; // metres
             var φ1 = toRadians(lat1);
             var φ2 = toRadians(lat2);
@@ -72,11 +72,11 @@ module.exports = function() {
         }
 
         distArry.push(distance);
-        console.log(distArry)
+        console.log(distArry);
         for (i = 0; i < matchList.length; i++) {
             if (distArry[i] < matchList[0].locPref) {
-                withinRange.push(matchList[i].ID)
-            };
+                withinRange.push(matchList[i].ID);
+            }
             filterDup = withinRange.reduce(function(a, b) {
                 if (a.indexOf(b) < 0) a.push(b);
                 return a;

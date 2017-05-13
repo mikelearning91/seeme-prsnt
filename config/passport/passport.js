@@ -85,7 +85,7 @@ module.exports = function(passport, user) {
 
             var isValidPassword = function(userpass, password) {
                 return bCrypt.compareSync(password, userpass);
-            }
+            };
 
             User.findOne({ where: { email: email } }).then(function(user) {
 
@@ -109,4 +109,4 @@ module.exports = function(passport, user) {
             });
         }
     ));
-}
+};
