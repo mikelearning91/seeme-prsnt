@@ -82,10 +82,26 @@
     // Validation
     $("#signup").validate({
         rules: {
-            firstname: "required",
-            lastname: "required",
-            is_male: "required",
-            seeking_male: "required",
+            firstname: {
+                required: true,
+                minlength: 3
+            },
+            lastname: {
+                required: true,
+                minlength: 3
+            },
+            is_male: {
+                required: true,
+                minlength: 3
+            },
+            seeking_male: {
+                required: true,
+                minlength: 3
+            },
+            age: {
+                required: true,
+                minlength: 2
+            },
             password: {
                 required: true,
                 minlength: 3
@@ -111,6 +127,10 @@
         }
     });
 
+    $('#signup').keypress(function(e) {
+        if (e.keyCode == 13)
+            $('.next').click();
+    });
 
     // Loading
     //----------------------------------------------
