@@ -1,0 +1,44 @@
+<div class="container top-container">
+    <div class="row">
+        <div class="container">
+
+            <!-- start padding container -->
+            {{#unless users}}
+            <h2 class="center top-container">There are no matches in your area. <br>Don't worry. This is our fault. <br>We suck, you're lovely!</h2>
+            {{/unless}} {{#if users}}
+            <div class="wrap">
+                <!-- start jtinder container -->
+                <div id="tinderslide" class="{{currUser}}">
+                    <ul>
+                        {{#each users}}
+
+                        <li class="pane1">
+                            <div class="img">
+                                <video id="recorded-video" class="video" src="{{this.profile_video}}" ></video>
+                            </div>
+                            <div id="{{this.id}}" class="first-name">{{this.firstname}}</div>
+                            <div class="like"></div>
+                            <div class="dislike"></div>
+                        </li>
+
+                        {{/each}}
+                    </ul>
+                </div>
+                <!-- end jtinder container -->
+            </div>
+            <!-- end padding container -->
+
+            <!-- jTinder trigger by buttons  -->
+            <div class="actions">
+                <a href="#" class="dislike"><i></i></a>
+                <a href="#" class="like"><i></i></a>
+            </div>
+
+            {{/if}}
+
+            <!-- jTinder status text  -->
+            <div id="status"></div>
+        </div>
+    </div>
+</div>
+

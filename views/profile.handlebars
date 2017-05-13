@@ -1,0 +1,215 @@
+<div class="container top-container">
+
+
+
+
+
+
+
+    <!-- Trigger the modal with a button -->
+
+
+    <!-- Modal -->
+    <div id="myProfileVideo" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Your 10s Profile Picture</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <div>
+                                <button id="play" class="cam-btn" title="replay" disabled><i class="material-icons">replay_10</i></button>
+                                <button class="btn-success cam-btn" id="record" title="Snap a 10s video" disabled><i class="material-icons">camera</i></button>
+                                <button id="download" class="cam-btn" title="save as your profile photo" disabled><i class="material-icons">check</i></button>
+                                <video id="gum" autoplay muted></video>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            {{#if profile_video}}
+                            <h4 style="padding-top: 20px;">Current Profile Snippet</h4>
+
+                            <video id="recorded" class="video" src="{{profile_video}}"></video>
+                            {{/if}}
+                            <video id="recorded" class="video" style="display: none"></video>
+                            <div id="hide-on-replay" {{#if profile_video}}style="display: none" {{/if}}>
+                                <h4 class="txt-align-left">Tips</h4>
+                                <hr class="txt-align-left">
+                                <ol class="txt-align-left">
+                                    <h4>
+                                        <li>Be Yourself!</li>
+                                    </h4>
+                                    <h4>
+                                        <li>Keep it G, rated G.</li>
+                                    </h4>
+                                    <h4>
+                                        <li>You have 10 seconds to say who you are. If you have nothing good to say, I hope you're
+                                            super sexy or something.</li>
+                                    </h4>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+                {{!--
+                <div>--}} {{!-- ////////// camera //////////
+                    <button id="play" class="cam-btn" title="replay" disabled><i class="material-icons">replay_10</i></button>
+                    <button class="btn-success cam-btn" id="record" title="Snap a 10s video" disabled><i class="material-icons">camera</i></button>
+                    <button id="download" class="cam-btn" title="save as your profile photo" disabled><i class="material-icons">check</i></button>
+                </div>
+                <video id="gum" autoplay muted></video>
+                <video id="recorded" autoplay loop></video>--}}
+            </div>
+        </div>
+    </div>
+
+    {{!--
+    <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a>
+        <i class="fa fa-coffee"></i> This is where you edit/update your profile.
+    </div>--}}
+
+    <!-- edit form column -->
+    <div class="row margin-top-bott">
+        <div class="col-sm-8 col-xs-12">
+
+            <h2>Hi, {{firstname}}! Welcome to your Seemē profile.</h2>
+            <h4 class="note">The Seemē team really appeciates your patience with how unorganized, disfunctional and unfinished this app is.
+                We are still crunching code. Play around, and I hope you enjoy our alpha version of, Seemē app</h4>
+        </div>
+    </div>
+
+    <div class="row margin-top-bott">
+        <form class="form-horizontal" action="/updateprofile?_method=PUT" method="POST">
+            <div class="col-xs-8 personal-info pull-left">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Display Name:</label>
+                    <div class="col-xs-6">
+                        <input name="firstname" class="form-control" type="text" value="{{firstname}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Email:</label>
+                    <div class="col-xs-6">
+                        <input name="email" class="form-control" type="text" value="{{email}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Age:</label>
+                    <div class="col-xs-6">
+                        <input name="age" class="form-control" type="text" value="{{age}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Location:</label>
+                    <div class="col-xs-6">
+                        <input name="location" class="form-control" type="text" value="{{location}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">I am a:</label>
+                    <div class="col-xs-6">
+                        <select name="is_male" class="form-control" id="sel1">
+                             <option {{#if is_male}}selected{{/if}}>Guy</option>
+                            <option {{#unless is_male}}selected{{/unless}}>Girl</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Seeking a:</label>
+                    <div class="col-xs-6">
+                        <select name="seeking_male" class="form-control" id="sel1">
+                            <option {{#if seeking_male}}selected{{/if}}>Guy</option>
+                            <option {{#unless seeking_male}}selected{{/unless}}>Girl</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Between ages:</label>
+                    <div class="col-xs-6">
+                        <p>
+
+                            <div style="display:none;">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input name="age_pref_min" type="number" id="age-min" style="font-weight:bold;" {{#if age_pref_min}}value="{{age_pref_min}}"
+                                            {{/if}}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input name="age_pref_max" type="number" id="age-max" style="font-weight:bold;" {{#if age_pref_max}}value="{{age_pref_max}}"
+                                            {{/if}}>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                        <div id="slider"></div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-xs-3 control-label"></label>
+                    <div class="col-xs-8">
+                        <input type="submit" class="btn btn-primary" value="Save Changes">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-xs-12">
+                <div class="row">
+                    <div class="col-xs-6 txt-align-center">
+                        <a href="#" data-toggle="modal" data-target="#myProfileVideo" title="your 10s profile video"><i class="material-icons category-icon">portrait</i></a>
+                        <hr>
+                    </div>
+                    <div class="col-xs-6 txt-align-center">
+                        <a href="#"><i class="material-icons category-icon">rowing</i></a>
+                        <hr>
+                    </div>
+                    <div class="col-xs-6 txt-align-center">
+                        <a href="#"><i class="material-icons category-icon">business</i></a>
+                        <hr>
+                    </div>
+                    <div class="col-xs-6 txt-align-center">
+                        <a href="#"><i class="material-icons category-icon">pregnant_woman</i></a>
+                        <hr>
+                    </div>
+                    <div class="col-xs-6 txt-align-center">
+                        <a href="#"><i class="material-icons category-icon">local_dining</i></a>
+                        <hr>
+                    </div>
+                    <div class="col-xs-6 txt-align-center">
+                        <a href="#"><i class="material-icons category-icon">theaters</i></a>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<!-- include adapter for srcObject shim -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+<script src="lib/wnumb/wnumb.js"></script>
+<script src="lib/noui/nouislider.min.js"></script>
+{{!--
+<script src="assets/js/takephoto.js"></script>--}}

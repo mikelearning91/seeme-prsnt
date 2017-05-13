@@ -1,0 +1,211 @@
+   .navbar-default .nav>li>a,
+   .navbar-default .nav>li>a:focus {
+       color: #009fdc;
+   }
+   
+   .navbar-brand {
+       color: #009fdc !important;
+   }
+   
+   .navbar-default .nav>li>a:hover,
+   .navbar-default .nav>li>a:focus:hover {
+       color: #7d05ae;
+       background: rgba(0, 159, 220, .07);
+   }
+   
+   #mainNav {
+       box-shadow: 0 0 9px 0 rgba(128, 128, 128, 0.33);
+       background: white;
+   }
+   
+   .settings {
+       font-size: 30px;
+   }
+   
+   #settings {
+       line-height: 85px;
+       padding-top: 10px;
+   }
+   
+   #settings:hover {
+       background: transparent;
+   }
+   
+   h1,
+   #body-master {
+       transition: all 1.5s ease-in;
+       -moz-transition: all 1.5s ease-in;
+       -webkit-transition: all 1.5s ease-in;
+       -o-transition: all 1.5s ease-in;
+   }
+   
+   #body-master {
+       position: absolute;
+       left: -1500px;
+       -webkit-animation: slide .5s forwards;
+       -webkit-animation-delay: .2s;
+       animation: slide .5s forwards;
+       animation-delay: .2s;
+   }
+   
+   @-webkit-keyframes slide {
+       100% {
+           left: 10%;
+       }
+   }
+   
+   @keyframes slide {
+       100% {
+           left: 10%;
+       }
+   }
+   /* Camera */
+   
+   #start-camera {
+       display: none;
+       border-radius: 3px;
+       max-width: 400px;
+       color: #fff;
+       background-color: #448AFF;
+       text-decoration: none;
+       padding: 15px;
+       opacity: 0.8;
+       margin: 50px auto;
+       text-align: center;
+   }
+   
+   video#camera-stream {
+       display: none;
+       width: 100%;
+   }
+   
+   img#snap {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       z-index: 10;
+       display: none;
+   }
+   
+   #error-message {
+       width: 100%;
+       background-color: #ccc;
+       color: #9b9b9b;
+       font-size: 28px;
+       padding: 200px 100px;
+       text-align: center;
+       display: none;
+   }
+   
+   .controls {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 70%;
+       height: 100%;
+       z-index: 20;
+       display: flex;
+       align-items: flex-end;
+       justify-content: space-between;
+       padding: 30px;
+       display: none;
+       margin-left: 15%;
+   }
+   
+   .controls a {
+       border-radius: 50%;
+       color: #fff;
+       background-color: #111;
+       text-decoration: none;
+       padding: 15px;
+       line-height: 0;
+       opacity: 0.7;
+       outline: none;
+       -webkit-tap-highlight-color: transparent;
+   }
+   
+   .controls a:hover {
+       opacity: 1;
+   }
+   
+   .controls a.disabled {
+       background-color: #555;
+       opacity: 0.5;
+       cursor: default;
+       pointer-events: none;
+   }
+   
+   .controls a.disabled:hover {
+       opacity: 0.5;
+   }
+   
+   .controls a i {
+       font-size: 18px;
+   }
+   
+   .controls #start-recording i {
+       font-size: 32px;
+   }
+   
+   canvas {
+       display: none;
+   }
+   
+   video#camera-stream.visible,
+   img#snap.visible,
+   #error-message.visible {
+       display: block;
+   }
+   
+   .controls.visible {
+       display: flex;
+   }
+   
+   .noUi-connect {
+       background: #009fdc;
+   }
+   
+   .margin-top-bott {
+       margin-top: 30px;
+       margin-bottom: 30px;
+   }
+   
+   .category-icon {
+       font-size: 90px;
+   }
+   
+   .first-name {
+       transform: translateY(-14px);
+   }
+   
+   .cam-btn {
+       height: 50px;
+       border-radius: 50%;
+       padding: 0 !important;
+       width: 50px;
+       border: 0;
+       line-height: 63px;
+   }
+   
+   .txt-align-left {
+       text-align: left;
+   }
+   
+   .txt-align-center {
+       text-align: center;
+   }
+   
+   .video-pro {
+       margin: 0 auto !important;
+       width: 100%;
+       border: 4px solid;
+       cursor: pointer;
+       border-radius: 50%;
+       height: 100%;
+   }
+   
+   .inn-cont-card {
+       display: block;
+       padding-bottom: 40px;
+   }

@@ -1,0 +1,64 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div id="menu-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="icon"></span>
+                <span class="text">MENU</span>
+            </div>
+            <a class="navbar-brand" href="/">seemē</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="/#download">Download</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/signin">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<div class="container top-container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Create an account to continue to Seemē</h1>
+            <div class="account-wall">
+                <form id="signup" class="form-signin" name="signup" method="post" action="/signup">
+
+                    <input class="form-control" name="email" type="email" placeholder="email">
+
+                    <input name="firstname" class="form-control" type="text" placeholder="first name">
+
+                    <input name="lastname" class="form-control" type="text" placeholder="last name">
+
+                    <input name="age" class="form-control" type="numbers" placeholder="age">
+                    <label>I am a: </label>
+                    <select name="is_male" class="form-control" id="sel1">
+            <option>Guy</option>
+            <option>Girl</option>
+        </select>
+        <label>Seeking a: </label>
+                    <select name="seeking_male" class="form-control" id="sel1">
+            <option>Guy</option>
+            <option>Girl</option>
+        </select>
+
+                    <input name="password" type="password" class="form-control" placeholder="password">
+
+                    <input class="btn" type="submit" value="Next">
+                </form>
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                </form>
+            </div>
+            <label class="new-account">already have an account? <a href="/signin">sign in</a></label>
+        </div>
+    </div>
+</div>

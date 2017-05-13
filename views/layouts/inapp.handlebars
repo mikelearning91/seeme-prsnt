@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="See, Listen, Match, Chat and Date all in one simple app">
+    <meta name="author" content="SEEME TEAM">
+    <title>seeMe - Meet People, Make New Friends, Chat, Flirt</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Custom Fonts / Material Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Plugin CSS -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="lib/device-mockups/device-mockups.min.css" rel="stylesheet">
+    <link href="lib/noui/nouislider.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/{{{ swipeStyle }}}" rel="stylesheet">
+    <link href="assets/css/{{{ stylesheet }}}" rel="stylesheet">
+    <link href="assets/css/recordVideo.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div id="menu-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="icon"></span>
+                    <span class="text">MENU</span>
+                </div>
+                <a class="navbar-brand" href="/">seemē</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <a class="navo" href="/swipe">Find Matches</a>
+                    </li>
+                    <li>
+                        <a class="navo" href="/mymatches">My Matches</a>
+                    </li>
+                    <li>
+                        <a class="navo" href="/logout">Logout</a>
+                    </li>
+                    <li>
+                        <a id="settings" class="navo" href="/profile"><i class="fa fa-cog settings" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="body-master" class="fade-in">
+        {{{ body }}}
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Validate JS Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <!-- transform2d lib -->
+    <script src="assets/js/jquery.transform2d.js"></script>
+    <!-- jTinder lib -->
+    <script src="assets/js/jquery.jTinder.js"></script>
+    <!-- CHAT module -->
+    {{{chatScripts}}}
+    <!-- Client Side JavaScript -->
+    <script src="assets/js/inapp.js"></script>
+    <script src="assets/js/recordVideo.js"></script>
+    
+
+</body>
+
+</HTML>

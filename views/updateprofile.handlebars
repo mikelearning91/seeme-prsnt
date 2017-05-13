@@ -1,0 +1,108 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <div id="menu-btn" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="icon"></span>
+                <span class="text">MENU</span>
+            </div>
+            <a class="navbar-brand page-scroll" href="#page-top">seemē</a>
+        </div>
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#features">Profile</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#download">Matches</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container top-container">
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Update a video {{firstname}} </h6>
+
+                <input type="file" class="form-control">
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a>
+                <i class="fa fa-coffee"></i> This is an <strong>.alert</strong>. Use this to show important messages to the
+                user.
+            </div>
+            <h3>Your Profile Info</h3>
+
+            <form class="form-horizontal" action="/updateprofile" method="POST">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Display Name:</label>
+                    <div class="col-lg-8">
+                        <input name="username" class="form-control" type="text" value="{{firstname}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Age:</label>
+                    <div class="col-lg-8">
+                        <input name="age" class="form-control" type="text" value="{{age}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input name="email" class="form-control" type="text" value="{{email}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Username:</label>
+                    <div class="col-md-8">
+                        <input name="firstname" class="form-control" type="text" value="{{firstname}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Location:</label>
+                    <div class="col-md-8">
+                        <input name="location" class="form-control" type="text" value="{{location}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Password:</label>
+                    <div class="col-md-8">
+                        <input name="password" class="form-control" type="password" value="{{password}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                        <input name="password" class="form-control" type="password" value="{{password}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="submit" class="btn btn-primary" value="Save Changes">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
