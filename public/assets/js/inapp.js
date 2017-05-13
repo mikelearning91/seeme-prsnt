@@ -16,7 +16,8 @@
 
             var gotLikedId = item["0"].children[1].id;
             var userWhoLikedId = $("#" + gotLikedId).parents().eq(2).attr("class");
-
+            console.log("just got liked yo", gotLikedId);
+            console.log("I just liked you yo", userWhoLikedId);
             // ajax to post to API to send to database table MATCHES
             $.ajax({
                 type: "POST",
@@ -110,126 +111,20 @@
     });
 
 
-    // Options for Message
-    //----------------------------------------------
-    var options = {
-        'btn-loading': '<i class="fa fa-spinner fa-pulse"></i>',
-        'btn-success': '<i class="fa fa-check"></i>',
-        'btn-error': '<i class="fa fa-remove"></i>',
-        'msg-success': 'All Good! Redirecting...',
-        'msg-error': 'Wrong login credentials!',
-        'useAJAX': true,
-    };
-
-    // Login Form
-    //----------------------------------------------
-    // Validation
-    $("#login-form").validate({
-        rules: {
-            lg_username: "required",
-            lg_password: "required",
-        },
-        errorClass: "form-invalid"
-    });
-
-    // Register Form
-    //----------------------------------------------
-    // Validation
-    $("#register-form").validate({
-        rules: {
-            reg_username: "required",
-            reg_password: {
-                required: true,
-                minlength: 5
-            },
-            reg_password_confirm: {
-                required: true,
-                minlength: 5,
-                equalTo: "#register-form [name=reg_password]"
-            },
-            reg_email: {
-                required: true,
-                email: true
-            },
-            reg_agree: "required",
-        },
-        errorClass: "form-invalid",
-        errorPlacement: function(label, element) {
-            if (element.attr("type") === "checkbox" || element.attr("type") === "radio") {
-                element.parent().append(label); // this would append the label after all your checkboxes/labels (so the error-label will be the last element in <div class="controls"> )
-            } else {
-                label.insertAfter(element); // standard behaviour
-            }
-        }
-    });
-
-
-    // Loading
-    //----------------------------------------------
-    function remove_loading($form) {
-        $form.find('[type=submit]').removeClass('error success');
-        $form.find('.login-form-main-message').removeClass('show error success').html('');
-    }
-
-    function form_loading($form) {
-        $form.find('[type=submit]').addClass('clicked').html(options['btn-loading']);
-    }
-
-    function form_success($form) {
-        $form.find('[type=submit]').addClass('success').html(options['btn-success']);
-        $form.find('.login-form-main-message').addClass('show success').html(options['msg-success']);
-    }
-
-    function form_failed($form) {
-        $form.find('[type=submit]').addClass('error').html(options['btn-error']);
-        $form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
-    }
-
-    var slider = document.getElementById('slider');
-
-    noUiSlider.create(slider, {
-        start: [18, 60],
-        connect: true,
-        tooltips: true,
-        format: wNumb({
-            decimals: 0
-        }),
-        range: {
-            'min': 18,
-            'max': 60
-        }
-    });
-    var ageMin = document.getElementById('age-min');
-    var ageMax = document.getElementById('age-max');
-
-    slider.noUiSlider.on('update', function(values, handle) {
-
-        var value = values[handle];
-
-        if (handle) {
-            ageMax.value = value;
-        } else {
-            ageMin.value = value;
-        }
-    });
-    var actualMin = ageMin.getAttribute("value");
-    slider.noUiSlider.set([actualMin, null]);
-    var actualMax = ageMax.getAttribute("value");
-    slider.noUiSlider.set([null, actualMax]);
-
-    ageMin.addEventListener('change', function() {
-        slider.noUiSlider.set([this.value, null]);
-    });
-    ageMax.addEventListener('change', function() {
-        slider.noUiSlider.set([null, this.value]);
-    });
-
-    var thisVideo = $(".pane1 > div > video");
-    $("#tinderslide").click(function() { thisVideo.paused ? thisVideo.play() : thisVideo.pause(); });
-
-
-
+    // play and pause video on video click
     $('.video').click(function() { this.paused ? this.play() : this.pause(); });
-    $('.video-pro').click(function() { this.paused ? this.play() : this.pause(); });
+
+
+
+
+
+    // $('.pane1').hover(function() {
+    //     this.find('video').get(0).play();
+    // });
+
+    // $(".video").on("tap click", function(event) {
+    //     event.preventDefault();
+    //     this.get(0).play();
+    // });
 
 })(jQuery); // End of use strict

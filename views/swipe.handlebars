@@ -14,9 +14,12 @@
 
                         <li class="pane1">
                             <div class="img">
-                                <video id="recorded-video" class="video" src="{{this.profile_video}}" ></video>
+                                <video id="recorded-video" class="video" preload="true">
+                                          <source src="{{this.profile_video}}" type="video/webm">
+
+                                </video>
                             </div>
-                            <div id="{{this.id}}" class="first-name">{{this.firstname}}</div>
+                            <div id="{{this.id}}" class="first-name">{{this.firstname}}, {{this.age}}</div>
                             <div class="like"></div>
                             <div class="dislike"></div>
                         </li>

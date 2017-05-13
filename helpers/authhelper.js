@@ -105,10 +105,10 @@ exports.swipe = function(req, res) {
                         $between: [req.user.age_pref_min, req.user.age_pref_max]
                     },
                     age_pref_min: {
-                        $lt: req.user.age
+                        $lte: req.user.age
                     },
                     age_pref_max: {
-                        $gt: req.user.age
+                        $gte: req.user.age
                     },
                     is_male: req.user.seeking_male,
                     seeking_male: req.user.is_male
@@ -147,6 +147,8 @@ exports.profile = function(req, res) {
         layout: 'inapp',
         stylesheet: "profile.css",
         swipeStyle: "profile.css",
+        recordJS: '<script src="assets/js/recordVideo.js"></script>',
+        nouiSlider: '<script src="assets/js/nouislider.js"></script>',
         firstname: req.user.firstname,
         lastname: req.user.lastname,
         email: req.user.email,
