@@ -1,11 +1,11 @@
 <div class="container top-container">
   <div class="row">
-    <div class="container">
+    <div id="loggedInUserEmail" name="{{loggedInUserEmail}}" class="container">
 
       {{#unless users}}
       <h1 class="center top-container">You have no matches yet.</h1>
       <div class="txt-align-center">
-        <a href="#" class="btn btn-lg btn-success">Find Matches</a>
+        <a href="/swipe" class="btn btn-lg btn-success">Find Matches</a>
       </div>
       {{/unless}} {{#if users}} {{#each users}}
       <div class="col-xs-12 col-sm-4">
@@ -19,7 +19,7 @@
             <div class="txt-align-center">
               <a href="#" class="btn btn-success view-chat-btn">view profile</a>
             </div>
-            <div id="loggedInUserEmail" name="{{loggedInUserEmail}}" class="txt-align-center">
+            <div class="txt-align-center">
               <a href="#" id="{{this.email}}" class="btn btn-success view-chat-btn">chat</a>
             </div>
           </div>

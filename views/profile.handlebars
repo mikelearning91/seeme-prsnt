@@ -1,14 +1,5 @@
 <div class="container top-container">
 
-
-
-
-
-
-
-    <!-- Trigger the modal with a button -->
-
-
     <!-- Modal -->
     <div id="myProfileVideo" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -22,7 +13,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6 col-xs-12">
-                            <div>
+                            <div class="txt-align-center">
                                 <button id="play" class="cam-btn" title="replay" disabled><i class="material-icons">replay_10</i></button>
                                 <button class="btn-success cam-btn" id="record" title="Snap a 10s video" disabled><i class="material-icons">camera</i></button>
                                 <button id="download" class="cam-btn" title="save as your profile photo" disabled><i class="material-icons">check</i></button>
@@ -37,8 +28,8 @@
                             {{/if}}
                             <video id="recorded" class="video" style="display: none"></video>
                             <div id="hide-on-replay" {{#if profile_video}}style="display: none" {{/if}}>
-                                <h4 class="txt-align-left">Tips</h4>
-                                <hr class="txt-align-left">
+                                <h4 class="txt-align-left mar-left-22">Tips</h4>
+                                <hr class="txt-align-left mar-left-22">
                                 <ol class="txt-align-left">
                                     <h4>
                                         <li>Be Yourself!</li>
@@ -85,7 +76,7 @@
 
             <h2>Hi, {{firstname}}! Welcome to your Seemē profile.</h2>
             <h4 class="note">The Seemē team really appeciates your patience with how unorganized, disfunctional and unfinished this app is.
-                We are still crunching code. Play around, and I hope you enjoy our alpha version of, Seemē app</h4>
+                We are still crunching code. Play around, and I hope you enjoy our alpha version of, Seemē.</h4>
         </div>
     </div>
 

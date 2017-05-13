@@ -3,9 +3,9 @@ module.exports = function(sequelize, Sequelize) {
 
         id: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
 
-        firstname: { type: Sequelize.STRING, notEmpty: true },
+        firstname: { type: Sequelize.STRING },
 
-        lastname: { type: Sequelize.STRING, notEmpty: true },
+        lastname: { type: Sequelize.STRING },
 
         email: { type: Sequelize.STRING, validate: { isEmail: true } },
 
