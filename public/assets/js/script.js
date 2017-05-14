@@ -127,10 +127,7 @@
         }
     });
 
-    $('#signup').keypress(function(e) {
-        if (e.keyCode == 13)
-            $('.next').click();
-    });
+
 
     // Loading
     //----------------------------------------------
@@ -231,6 +228,12 @@
         });
     });
 
+    $('#signup').keypress(function(e) {
+        if (e.which == '13') {
+            e.preventDefault();
+            $('.next').click();
+        }
+    });
 
 
 })(jQuery); // End of use strict
