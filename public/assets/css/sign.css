@@ -45,14 +45,14 @@
 html {
     height: 100%;
     /*Image only BG fallback*/
-    background: url('http://thecodeplayer.com/uploads/media/gs.png');
+    background: url('/assets/img/gs.png');
     /*background = gradient + image pattern combo*/
-    background: linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), url('http://thecodeplayer.com/uploads/media/gs.png');
+    background: linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), url('/assets/img/gs.png');
 }
 
 body {
     font-family: montserrat, arial, verdana;
-    background: url('http://thecodeplayer.com/uploads/media/gs.png');
+    background: url('/assets/img/gs/gs.png');
     /*background = gradient + image pattern combo*/
     background: rgba(194, 55, 229, 0.23);
     /*background: linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), url*/
