@@ -91,16 +91,13 @@
                 minlength: 3
             },
             is_male: {
-                required: true,
-                minlength: 3
+                required: true
             },
             seeking_male: {
-                required: true,
-                minlength: 3
+                required: true
             },
             age: {
-                required: true,
-                minlength: 2
+                required: true
             },
             password: {
                 required: true,
