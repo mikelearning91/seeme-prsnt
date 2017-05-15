@@ -198,13 +198,13 @@
    
    .video-pro {
        margin: 0 auto !important;
-       width: 70%;
+       width: 264px;
        border: 4px solid;
        cursor: pointer;
-       border-radius: 50%;
+       border-radius: 3%;
        height: 200px;
        display: block;
-       margin-bottom: 30px !important;
+       margin-bottom: 8px !important;
    }
    
    .inn-cont-card {
@@ -230,7 +230,7 @@
        line-height: 750px;
        font-weight: 600;
    }
-   /* preloader box */
+   /* preloader box spinner */
    
    .wrap2 {
        perspective: 800px;
@@ -246,10 +246,13 @@
    .boxcube2 {
        position: relative;
        width: 80px;
+       transform-style: preserve-3d;
        -webkit-transform-style: preserve-3d;
+       transform: translate3d(0, 0, 0);
        -webkit-transform: translate3d(0, 0, 0);
        -webkit-transform-origin: 40px 40px 0;
-       -webkit-transform-origin: 40px 40px 0;
+       transform-origin: 40px 40px 0;
+       animation: spin 1s infinite ease-in-out;
        -webkit-animation: spin 1s infinite ease-in-out;
    }
    
@@ -264,36 +267,52 @@
    }
    
    .boxfront {
+       transform: translateZ(40px);
        -webkit-transform: translateZ(40px);
+       backface-visibility: hidden;
        -webkit-backface-visibility: hidden;
    }
    
    .boxback {
        -webkit-transform: translateZ(-40px) rotateY(180deg);
+       transform: translateZ(-40px) rotateY(180deg);
+       backface-visibility: hidden;
        -webkit-backface-visibility: hidden;
    }
    
    .boxtop {
        -webkit-transform: rotateX(-90deg) translateY(-40px);
+       transform: rotateX(-90deg) translateY(-40px);
+       transform-origin: top center;
        -webkit-transform-origin: top center;
+       backface-visibility: hidden;
        -webkit-backface-visibility: hidden;
    }
    
    .boxbottom {
+       transform: rotateX(90deg) translateY(40px);
        -webkit-transform: rotateX(90deg) translateY(40px);
+       transform-origin: bottom center;
        -webkit-transform-origin: bottom center;
+       backface-visibility: hidden;
        -webkit-backface-visibility: hidden;
    }
    
    .boxleft {
+       transform: rotateY(270deg) translateX(-40px);
        -webkit-transform: rotateY(270deg) translateX(-40px);
+       transform-origin: center left;
        -webkit-transform-origin: center left;
+       backface-visibility: hidden;
        -webkit-backface-visibility: hidden;
    }
    
    .boxright {
+       transform: rotateY(-270deg) translateX(40px);
        -webkit-transform: rotateY(-270deg) translateX(40px);
+       transform-origin: top right;
        -webkit-transform-origin: top right;
+       backface-visibility: hidden;
        -webkit-backface-visibility: hidden;
    }
    
@@ -306,6 +325,18 @@
    }
    
    @-webkit-keyframes spin {
+       0% {
+           -webkit-transform: rotateY(0deg);
+       }
+       60% {
+           -webkit-transform: rotateY(-140deg);
+       }
+       100% {
+           -webkit-transform: rotateY(-180deg);
+       }
+   }
+   
+   @keyframes spin {
        0% {
            -webkit-transform: rotateY(0deg);
        }
@@ -330,4 +361,8 @@
        z-index: 1052;
        width: 100vw;
        font-family: montserrat;
+   }
+   
+   .vid-margin-top {
+       margin-top: 60px !important;
    }

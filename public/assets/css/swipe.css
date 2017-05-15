@@ -8,8 +8,10 @@
 #tinderslide {
     position: relative;
     background: #fff;
-    width: 95%;
+    /*width: 95%;*/
+    width: 60%;
     height: 100%;
+    margin: 0 auto;
 }
 
 #tinderslide ul {
@@ -105,10 +107,16 @@
 }
 
 #tinderslide .dislike {
-    right: 45px;
+    /*right: 45px;*/
+    right: -12px;
+    /* custom */
     left: auto;
     background: url("../img/x.png") no-repeat scroll 0 0;
-    background-size: 80px 73px;
+    /*background-size: 80px 73px;*/
+    background-size: 120px 95px;
+    /* custom */
+    top: 23px;
+    /* custom */
 }
 
 
@@ -253,4 +261,6 @@
 
 .video {
     cursor: pointer;
+    /*border: 4px solid;
+    border-radius: 3%;*/
 }

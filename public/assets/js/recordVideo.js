@@ -162,6 +162,7 @@ function play() {
     recordedVideo.src = window.URL.createObjectURL(superBuffer);
     document.getElementById('hide-on-replay').style.display = 'none';
     recordedVideo.style.display = 'block';
+    recordedVideo.setAttribute("autoplay", "autplay");
 }
 
 function download() {

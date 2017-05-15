@@ -110,21 +110,8 @@
         }
     });
 
-
-    // play and pause video on video click
+    // play and pause video if you click anywhere on video element
     $('.video').click(function() { this.paused ? this.play() : this.pause(); });
-
-
-
-
-
-    // $('.pane1').hover(function() {
-    //     this.find('video').get(0).play();
-    // });
-
-    // $(".video").on("tap click", function(event) {
-    //     event.preventDefault();
-    //     this.get(0).play();
-    // });
+    $('.video-pro').click(function() { this.paused ? this.play() : this.pause(); });
 
 })(jQuery); // End of use strict
