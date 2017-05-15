@@ -147,7 +147,14 @@
         $form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
     }
 
-
+    //disablig 'enter' key on form and re-assigning it to the next button
+    // BUGGY: on second step, 'enter' keypress doesn't go to next step
+    $('#signup').keypress(function(e) {
+        if (e.which == 13 || e.keyCode == 13) {
+            e.preventDefault();
+            $('.next').parent().find('.next').click();
+        }
+    });
 
     //form animation
 
@@ -225,12 +232,7 @@
         });
     });
 
-    $('#signup').keypress(function(e) {
-        if (e.which == '13') {
-            e.preventDefault();
-            $('.next').click();
-        }
-    });
+
 
 
 })(jQuery); // End of use strict
