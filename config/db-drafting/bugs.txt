@@ -1,0 +1,4 @@
+1) .next on sign up page - keypress 'enter' on 2nd step doesn't work.
+2) if logged in and go to home page, no way to get back to profile page. 
+    - solve with redirect? ifloggedin() type of function ???
+3)
