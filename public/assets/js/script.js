@@ -43,6 +43,8 @@
     });
 
 
+
+
     // Options for Message
     //----------------------------------------------
     var options = {
@@ -97,7 +99,8 @@
                 required: true
             },
             age: {
-                required: true
+                required: true,
+                minLength: 2
             },
             password: {
                 required: true,
@@ -124,6 +127,20 @@
         }
     });
 
+    //disabling 'enter' key on form and re-assigning it to the next button - for fieldset #one
+    $('#signup fieldset#one').keypress(function(e) {
+        if (e.which == 13 || e.keyCode == 13) {
+            e.preventDefault();
+            $('.next').parent().find('.next').click();
+        }
+    });
+    //disabling 'enter' key on form and re-assigning it to the next button - for fieldset #two
+    $('#signup fieldset#two').keypress(function(e) {
+        if (e.which == 13 || e.keyCode == 13) {
+            e.preventDefault();
+            $(this).find('.next').click();
+        }
+    });
 
 
     // Loading
@@ -146,15 +163,6 @@
         $form.find('[type=submit]').addClass('error').html(options['btn-error']);
         $form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
     }
-
-    //disablig 'enter' key on form and re-assigning it to the next button
-    // BUGGY: on second step, 'enter' keypress doesn't go to next step
-    $('#signup').keypress(function(e) {
-        if (e.which == 13 || e.keyCode == 13) {
-            e.preventDefault();
-            $('.next').parent().find('.next').click();
-        }
-    });
 
     //form animation
 

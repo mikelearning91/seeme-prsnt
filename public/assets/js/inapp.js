@@ -112,6 +112,8 @@
 
     // play and pause video if you click anywhere on video element
     $('.video').click(function() { this.paused ? this.play() : this.pause(); });
+    // hover over video on swipe page, plays or pauses profile picture
+    // $('.img > #recorded-video').hover(function() { this.paused ? this.play() : this.pause(); });
     $('.video-pro').click(function() { this.paused ? this.play() : this.pause(); });
 
 })(jQuery); // End of use strict

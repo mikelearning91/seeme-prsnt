@@ -13,9 +13,9 @@ module.exports = function(sequelize, Sequelize) {
 
         profile_video: { type: Sequelize.STRING },
 
-        age_pref_min: { type: Sequelize.INTEGER },
+        age_pref_min: { type: Sequelize.INTEGER, defaultValue: 18 },
 
-        age_pref_max: { type: Sequelize.INTEGER },
+        age_pref_max: { type: Sequelize.INTEGER, defaultValue: 60 },
 
         location: { type: Sequelize.STRING },
 
