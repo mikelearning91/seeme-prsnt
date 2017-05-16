@@ -210,7 +210,6 @@ function download() {
         profileVideosRef.getDownloadURL().then(function(url) {
 
 
-
             profileVideoLink = url;
             $("#page-cover").fadeIn(300);
 

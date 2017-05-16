@@ -42,9 +42,6 @@
         }
     });
 
-
-
-
     // Options for Message
     //----------------------------------------------
     var options = {
@@ -56,7 +53,7 @@
         'useAJAX': true,
     };
 
-    // Login Form
+    // Sign In Form
     //----------------------------------------------
     // Validation
     $("#signin").validate({
@@ -79,7 +76,7 @@
         errorClass: "form-invalid"
     });
 
-    // Register Form
+    // Sign Up Form
     //----------------------------------------------
     // Validation
     $("#signup").validate({
@@ -239,8 +236,5 @@
             easing: 'easeInOutBack'
         });
     });
-
-
-
 
 })(jQuery); // End of use strict
