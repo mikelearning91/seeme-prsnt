@@ -23,7 +23,11 @@ You can give a brief listing of the technologies you've learned and applied here
 
 ## Getting Started
 
-Clone / download a zip file. If you download a zip, unzip the package. Run node (nodemon) server. Run 'npm install --save" to acquire all packages needed to run the app. At first, you will have no users in the database, so you can simply sign up a few fake users, record videos for them by click on the "profile icon" in their profile page. Simply follow the intuitive UI to play around.
+Demo hosted on: https://shielded-shelf-51374.herokuapp.com/
+
+Clone / download a zip file. If you download a zip, unzip the package. Run node (nodemon) server. Run 'npm install --save" to acquire all packages needed to run the app/server. Then go to localhost:3000 in your web browser to experience seemē.
+
+At first, you will have no users in the database, so you can simply sign up a few fake users, record videos for them by click on the "profile icon" in their profile page. Simply follow the intuitive UI to play around.
 
 ### Prerequisities
 
